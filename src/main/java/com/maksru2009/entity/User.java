@@ -1,0 +1,18 @@
+package com.maksru2009.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class User {
+    private int id;
+    private String name;
+    private String lastName;
+    private String secondName;
+    private String phoneNumber;
+}
