@@ -1,0 +1,251 @@
+-- create schema if not exists bankTest;
+-- comment on schema bankTest is 'Created schema bankTest!';
+--
+-- create table if not exists bankTest.Bank(
+--     id bigserial primary key,
+--     name varchar(30) not null check ( name != '' )
+-- );
+-- create table if not exists bankTest.User(
+--     id bigserial primary key,
+--     name varchar(30) not null check ( name != '' ),
+--     lastName varchar(30) not null check ( lastName != '' ),
+--     secondName varchar(30) not null check ( secondName != '' ),
+--     phoneNumber varchar(30) not null check ( phoneNumber != '' )
+-- );
+-- create table if not exists bankTest.Account(
+--     id bigserial primary key,
+--     accountNumber varchar(30) not null check ( accountNumber != '' ),
+--     amount double precision not null,
+--     bank_id integer references bankTest.Bank(id),
+--     user_id integer references bankTest.User(id)
+-- );
+
+-- create table if not exists bankTest.Transaction(
+--     id bigserial primary key,
+--     type mod not null,
+--     sendingBank_id integer references bankTest.Bank(id),
+--     beneficiaryBank_id integer references bankTest.Bank(id),
+--     sendingUser_id integer references bankTest.User(id),
+--     beneficiaryUser_id integer references bankTest.User(id),
+--     sendingAccount_id integer references bankTest.account(id),
+--     beneficiaryAccount_id integer references bankTest.account(id),
+--     amount double precision not null,
+--     timestamp timestamp not null,
+--     account_id integer references banktest.account(id)
+-- );
+-- create table if not exists banktest.bank_user(
+--     bank_id integer references bankTest.Bank(id) on update cascade on delete cascade ,
+--     user_id integer references bankTest.User(id) on update cascade on delete cascade
+-- );
+-- -- add Banks
+-- insert into banktest.bank(name)
+-- values ('Clever-Bank');
+-- insert into banktest.bank(name)
+-- values ('Belveb-Bank');
+-- insert into banktest.bank(name)
+-- values ('BPS-Bank');
+-- insert into banktest.bank(name)
+-- values ('BNB-Bank');
+-- insert into banktest.bank(name)
+-- values ('BSB-Bank');
+--
+-- -- add Users
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Иванов','Алексей','Сергеевич','+375291234567');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Петрова','Екатерина','Андреевна','+375292345678');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Смирнов','Денис','Викторович','+375293456789');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Козлова','Ольга','Ивановна','+375294567890');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Морозов','Игорь','Николаевич','+375295678901');
+-- insert into banktest.user(lastname,name, secondname, phonenumber)
+-- values ('Васильевна','Мария','Павловна','+375296789012');
+-- insert into banktest.user(lastname, name,  secondname, phonenumber)
+-- values ('Новиков','Артем','Владимирович','+375297890123');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Федоровна','Анастасия','Дмитриевна','+372989012134');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Соколов','Павел','Александрович','+375299012345');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Кузнецова','Елена','Михайловна','+375291112233');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Андреев','Дмитрий','Олегович','+375292223344');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Жукова','Алена','Алексеевна','+375293334455');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Гусев','Иван','Валерьевич','+375294445566');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Козлов','Никита','Сергеевич','+375295556677');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Семенова','Ольга','Вячеславовна','+375296667788');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Иванов','Даниил','Анатольевич','+375297778899');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Медведева','Алина','Геннадьевна','+375298889900');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Попов','Аресений','Юрьевич','+375299990011');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Соловьева','Виктория','Петровна','+375291001122');
+-- insert into banktest.user(lastname, name, secondname, phonenumber)
+-- values ('Лебедев','Александр','Васильевич','+375292112233');
+
+-- -- add Accounts
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY55CLEV12345568906712567890',10000,1,1);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY55CLEV98765432109456343210',15000,1,2);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY55CLEV24681357902422135790',550,1,3);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY55CLEV13579246801357664680',7770,1,4);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY55CLEV55555555565432135555',100,1,5);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY55CLEV11112222331236345555',1000,1,6);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY55CLEV88887777666655824444',666,1,7);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY55CLEV99999999996699988999',9999,1,8);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY06BELV77778888999900141111',78320,2,1);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY06BELV44443333222331121000',1240,2,2);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY06BELV23456789012345654901',8840,2,3);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY06BELV43210987654321081765',1110,2,4);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY06BELV13579864201357927420',512,2,5);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY06BELV24681357902468755790',5512,2,6);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY06BELV55555555445555525555',886,2,7);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY06BELV98765432109876561210',7214,2,8);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY11BPSB11112222333344473555',5122,3,9);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY11BPSB88887777666655557744',1261,3,10);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY11BPSB77778888999900001111',8564,3,11);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY11BPSB44443333222211110000',7453,3,12);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY11BPSB13579864201357986420',555,3,13);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY11BPSB13579246801357924680',66612,3,14);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY11BPSB55555555555555555554',5553,3,15);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY11BPSB77778888999900001112',5551,3,16);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY45BNBB11112275633344445555',6424,4,9);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY45BNBB98765432643876543210',743,4,10);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY45BNBB77778886549900001111',8523,4,11);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY45BNBB44443333222212560000',1567,4,12);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY45BNBB13579671201357986420',8295,4,13);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY45BNBB13579782101357924680',9152,4,14);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY45BNBB77326888999900001111',1555,4,15);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY45BNBB13579246536757924680',1111,4,16);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY75BSBB11112265413344445555',852,5,17);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY75BSBB44455713222211110000',6573,5,18);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY75BSBB77778888991534801111',852,5,19);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY75BSBB55555512345675555555',123,5,20);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY75BSBB98765456109876543210',5214,5,20);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY75BSBB44443333810211110000',111000,5,20);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY75BSBB13579864512357986420',9850,5,2);
+-- insert into banktest.Account(accountnumber,amount, bank_id, user_id)
+-- values ('BY75BSBB77715239999900001111',886,5,5);
+-- -- add relationships
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (1,1);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (1,2);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (1,3);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (1,4);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (1,5);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (1,6);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (1,7);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (1,8);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (2,1);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (2,2);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (2,3);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (2,4);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (2,5);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (2,6);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (2,7);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (2,8);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (3,9);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (3,10);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (3,11);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (3,12);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (3,13);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (3,14);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (3,15);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (3,16);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (4,9);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (4,10);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (4,11);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (4,12);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (4,13);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (4,14);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (4,15);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (4,16);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (5,17);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (5,18);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (5,19);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (5,20);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (5,2);
+-- insert into banktest.bank_user(bank_id, user_id)
+-- values (5,5);
