@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Objects;
 
 /**
@@ -33,10 +34,9 @@ public class ReadPercentagesYml {
      * в случае неудачи(ошибки считывания) - установка значени % равного 5
      */
     private void readPercent(){
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource("percent.yml")).getFile());
+        InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("percent.yml");
         try {
-            percentages = mapper.readValue(file, Percentages.class);
+            percentages = mapper.readValue(resourceAsStream, Percentages.class);
         }catch (IOException e){
             System.out.println(e.getMessage());
             System.out.println("Initialize with 5%");

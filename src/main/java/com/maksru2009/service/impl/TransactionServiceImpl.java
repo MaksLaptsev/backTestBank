@@ -80,7 +80,7 @@ public class TransactionServiceImpl implements TransactionService<Transaction> {
                                 object.getBeneficiaryBank().getName(),object.getBeneficiaryAccount().getAccountNumber())
                         ,TypeOfCheck.CHECK,object.getBeneficiaryAccount());
             }
-        }else throw new SQLException("\u001B[31m"+"Insufficient funds to perform the operation"+"\u001B[0m");
+        }else throw new SQLException("\n!!!! Insufficient funds to perform the operation !!!!\n");
         return ownerID;
     }
 
@@ -109,7 +109,8 @@ public class TransactionServiceImpl implements TransactionService<Transaction> {
         List<Transaction> list = transactionDao.getTransactionBetweenDate(t1, t2, accID);
         if(list.size() == 0){
             String mes = """
-                    \u001B[31mTransactions between %s - %s not found!\u001B[0m""".
+                    \n!!!! Transactions between %s - %s not found! !!!!
+                    """.
                     formatted(new SimpleDateFormat("yyyy-MM-dddd").format(t1),
                             new SimpleDateFormat("yyyy-MM-dddd").format(t1));
             throw new SQLException(mes);

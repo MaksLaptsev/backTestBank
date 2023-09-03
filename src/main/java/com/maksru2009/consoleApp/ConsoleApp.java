@@ -126,7 +126,7 @@ public class ConsoleApp {
                 System.out.println("Make a choice");
                 int choice = scNextInt();
                 if(choice > banks.size() || choice < 0){
-                    System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                    System.out.println("\nInvalid number, try again\n");
                     firstMenu("Banks");
                 } else if (choice == 0) {
                     startApp();
@@ -153,7 +153,7 @@ public class ConsoleApp {
                 System.out.println("Make a choice");
                 int choice = scNextInt();
                 if(choice > users.size() || choice < 0){
-                    System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                    System.out.println("\nInvalid number, try again\n");
                     firstMenu("Users");
                 } else if (choice == 0) {
                     startApp();
@@ -187,7 +187,7 @@ public class ConsoleApp {
                 firstMenu("Banks");
             }
             default -> {
-                System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                System.out.println("\nInvalid number, try again\n");
                 selectedBank();
             }
         }
@@ -216,7 +216,7 @@ public class ConsoleApp {
         System.out.println("Make a choice");
         choice = scNextInt();
         if(choice < 0 || choice > users.size()){
-            System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+            System.out.println("\nInvalid number, try again\n");
             showUsersFromSelectedBank();
         } else if (choice == 0) {
             selectedBank();
@@ -244,7 +244,7 @@ public class ConsoleApp {
             System.out.println("0 - Previous menu");
             int choice = scNextInt();
             if(choice > banks.size() || choice < 0){
-                System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                System.out.println("\n!!!! Invalid number, try again !!!!\n");
                 selectedUser();
             }else if(choice == 0){
                 user = null;
@@ -281,7 +281,7 @@ public class ConsoleApp {
         System.out.println("0 - Previous menu");
         int choice = scNextInt();
         if(choice > accounts.size() || choice < 0){
-            System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+            System.out.println("\n!!!! Invalid number, try again !!!!\n");
             selectedUserAndBank();
         }else if(choice == 0){
             if(entryPointBank){
@@ -315,7 +315,7 @@ public class ConsoleApp {
                 System.out.println("0 - Previous menu");
                 choose = scNextInt();
                 if (choose > transactions.size() || choose <0){
-                    System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                    System.out.println("\n!!!! Invalid number, try again !!!!\n");
                     selectedUserAndBankAndAcc();
                 } else if (choose == 0) {
                     account = null;
@@ -327,7 +327,7 @@ public class ConsoleApp {
                     if (choosing == 0){
                         selectedUserAndBankAndAcc();
                     }else {
-                        System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                        System.out.println("\n!!!! Invalid number, try again !!!!\n");
                     }
                 }
             }
@@ -344,7 +344,7 @@ public class ConsoleApp {
                 selectedUserAndBank();
             }
             default -> {
-                System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                System.out.println("\n!!!! Invalid number, try again !!!!\n");
                 selectedUserAndBankAndAcc();
             }
         }
@@ -376,7 +376,7 @@ public class ConsoleApp {
                 selectedUserAndBankAndAcc();
 
             default -> {
-                System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                System.out.println("\n!!!! Invalid number, try again !!!!\n");
                 makeTransaction();
             }
         }
@@ -405,7 +405,7 @@ public class ConsoleApp {
         System.out.println("Make a choice.");
         int choice = scNextInt();
         if(choice < 0 || choice > banks.size()){
-            System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+            System.out.println("\n!!!! Invalid number, try again !!!!\n");
             listBenefBanks();
         } else if (choice == 0) {
             makeTransaction();
@@ -439,7 +439,7 @@ public class ConsoleApp {
         System.out.println("Make a choice.");
         int choice = scNextInt();
         if (choice < 0 || choice > users.size()){
-            System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+            System.out.println("\n!!!! Invalid number, try again !!!!\n");
             listBenefUsers();
         } else if (choice == 0) {
             benefBank = null;
@@ -477,7 +477,7 @@ public class ConsoleApp {
         System.out.println("Make a choice.");
         int choice = scNextInt();
         if (choice < 0 || choice > accounts.size()){
-            System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+            System.out.println("\n!!!! Invalid number, try again !!!!\n");
             listBenefAcc();
         } else if (choice == 0) {
             if (entryPointUsers){
@@ -510,7 +510,7 @@ public class ConsoleApp {
 
         double choice = scNextDouble();
         if (choice < 0d){
-            System.out.println(ANSI_RED+"The amount to transfer cannot be a negative value\n"+ANSI_RESET);
+            System.out.println("\n !!!! The amount to transfer cannot be a negative value !!!!\n");
             choiceAmountForTransaction();
         }else if (choice == 0d){
             benefAccount = null;
@@ -556,7 +556,7 @@ public class ConsoleApp {
         System.out.println("Make a choice.");
         int choice = scNextInt();
         if(choice < 0 || choice>users.size()){
-            System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+            System.out.println("\n!!!! Invalid number, try again !!!!\n");
             selectBenefUserFromAll();
         } else if (choice == 0) {
             makeTransaction();
@@ -590,7 +590,7 @@ public class ConsoleApp {
         System.out.println("Make a choice.");
         int choice = scNextInt();
         if (choice < 0 || choice > banks.size()){
-            System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+            System.out.println("\n!!!! Invalid number, try again !!!!\n");
         } else if (choice == 0) {
             benefUser = null;
             selectBenefUserFromAll();
@@ -611,7 +611,7 @@ public class ConsoleApp {
 
         double choice = scNextDouble();
         if (choice < 0d){
-            System.out.println(ANSI_RED+"The amount to transfer cannot be a negative value\n"+ANSI_RESET);
+            System.out.println("\n!!!! The amount to transfer cannot be a negative value !!!!\n");
             withdrawalFounds();
         } else if (choice == 0d) {
             selectedUserAndBankAndAcc();
@@ -645,7 +645,7 @@ public class ConsoleApp {
 
         double choice = scNextDouble();
         if (choice < 0d){
-            System.out.println(ANSI_RED+"The amount to transfer cannot be a negative value\n"+ANSI_RESET);
+            System.out.println("\n!!!! The amount to transfer cannot be a negative value !!!!\n");
             withdrawalFounds();
         } else if (choice == 0d) {
             selectedUserAndBankAndAcc();
@@ -698,8 +698,8 @@ public class ConsoleApp {
                 case 1 ->
                         selectedUserAndBankAndAcc();
                 default -> {
-                    System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
-                    System.out.println(ANSI_RED+"Unknown selection, you will be moved to your account menu.\n"+ANSI_RESET);
+                    System.out.println("\n!!!! Invalid number, try again !!!!");
+                    System.out.println("!!!! Unknown selection, you will be moved to your account menu. !!!!\n");
                     selectedUserAndBankAndAcc();
                 }
             }
@@ -755,7 +755,7 @@ public class ConsoleApp {
                 }
             }
             default -> {
-                System.out.println(ANSI_RED+"Invalid number, try again\n"+ANSI_RESET);
+                System.out.println("\n!!!! Invalid number, try again !!!!\n");
                 getAccStatement();
             }
         }
@@ -773,8 +773,8 @@ public class ConsoleApp {
             df.parse(s);
             return s;
         }catch (ParseException e){
-            System.out.println(ANSI_RED+"Invalid format, example of the required one: 2002-11-22"+ANSI_RESET);
-            System.out.println("Try again\n");
+            System.out.println("\n!!!! Invalid format, example of the required one: 2002-11-22 !!!!");
+            System.out.println("!!!! Try again !!!!\n");
         }
         return readDate();
     }
@@ -913,7 +913,7 @@ public class ConsoleApp {
             choice = sc.nextInt();
             return choice;
         }catch (InputMismatchException e){
-            System.out.println(ANSI_RED+"Please make a choice using only numbers\n"+ANSI_RESET);
+            System.out.println("\n!!!! Please make a choice using only numbers !!!!\n");
             sc.next();
         }
         return scNextInt();
@@ -928,8 +928,8 @@ public class ConsoleApp {
             choice = sc.nextDouble();
             return choice;
         }catch (InputMismatchException e){
-            System.out.println(ANSI_RED+"Please make a choice using only numbers"+ANSI_RESET);
-            System.out.println(ANSI_RED+"And use ',' instead of '.'\n"+ANSI_RESET);
+            System.out.println("!!!! Please make a choice using only numbers !!!!");
+            System.out.println("!!!! And use ',' instead of '.' !!!!\n");
             sc.next();
         }
         return scNextDouble();
@@ -940,7 +940,7 @@ public class ConsoleApp {
      */
     private void alsoSaveDir(TypeOfCheck type){
         String path = new CreateFolder().createFolder(type,user.getId(),bank.getName(),account.getAccountNumber());
-        System.out.println("\u001B[32m"+"In pdf format you can find it in\n"+path+"\n"+ANSI_RESET);
+        System.out.println("\nIn pdf format you can find it in\n"+path+"\n");
     }
 
 }
