@@ -13,7 +13,6 @@ import com.maksru2009.entity.Transaction;
 import com.maksru2009.service.impl.TransactionServiceImpl;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -27,7 +26,7 @@ public class CreatePdf {
     /**
      * Путь, по которому лежит необходимый шрифт
      */
-    private static final String FONT = "src/main/resources/DejaVuSans.ttf";
+    private static String FONT;
     public CreatePdf() {
         transactionService = new TransactionServiceImpl();
     }
@@ -35,7 +34,8 @@ public class CreatePdf {
     /**
      * @see CreatePdf#createRecipe(List, String, TypeOfCheck, Account, Timestamp, Timestamp, Timestamp)
      */
-    public void createRecipe(Transaction t,String path, TypeOfCheck type,Account account) throws SQLException {
+    public void createRecipe(Transaction t,String path, TypeOfCheck type,Account account){
+        FONT = String.valueOf(ClassLoader.getSystemResource("DejaVuSans.ttf"));
         try{
             createRecipe(List.of(t),path,type, account,new Timestamp(11111111L),
                     new Timestamp(11111111L),new Timestamp(11111111L));
@@ -54,6 +54,7 @@ public class CreatePdf {
     public void createRecipe(List<Transaction> tlist, String path, TypeOfCheck type, Account account,
                              Timestamp dateForm,Timestamp dateOf,Timestamp dateFor) throws IOException {
         path += createPath(tlist.get(0),type,dateForm);
+        FONT = String.valueOf(ClassLoader.getSystemResource("DejaVuSans.ttf"));
 
         PdfFont pdfFont = PdfFontFactory.createFont(FONT, "cp1251", PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
 

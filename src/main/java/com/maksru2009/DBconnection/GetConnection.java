@@ -2,8 +2,13 @@ package com.maksru2009.DBconnection;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Properties;
+
 /**
  * Используется для получения соединения с бд
  * информация для конфигурации бд находится в src/main/resources
@@ -15,7 +20,15 @@ public class GetConnection {
     private static HikariDataSource hds;
 
     private GetConnection(){
-        config = new HikariConfig("src/main/resources/db.properties");
+        InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("db.properties");
+        Properties props = new Properties();
+        try{
+            props.load(resourceAsStream);
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
+        config = new HikariConfig(props);
         hds = new HikariDataSource(config);
         try{
             connection = hds.getConnection();
