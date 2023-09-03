@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.maksru2009'
-version '1.0-SNAPSHOT'
+version '1'
 
 repositories {
     mavenCentral()
@@ -32,6 +32,21 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.26'
 
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'com.maksru2009.Main')
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    // Include the classpath from the dependencies
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+            // This help solve the issue with jar lunch
+            {
+                exclude "META-INF/*.SF"
+                exclude "META-INF/*.DSA"
+                exclude "META-INF/*.RSA"
+            }
 }
 
 test {
