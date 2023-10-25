@@ -2,8 +2,6 @@ package com.maksru2009.utils;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
