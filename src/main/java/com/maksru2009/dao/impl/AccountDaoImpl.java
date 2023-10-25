@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class AccountDaoImpl implements AccountDao<Account> {
-    private final Connection con;
+    private Connection con;
 
     public AccountDaoImpl() {
         con = GetConnection.getConnection();
@@ -112,7 +112,9 @@ public class AccountDaoImpl implements AccountDao<Account> {
         try(PreparedStatement statement = con.prepareStatement(sql)){
             statement.setInt(1,userId);
             try(ResultSet set = statement.executeQuery()){
-                accountList.add(createAccFromRS(set));
+                while(set.next()){
+                    accountList.add(createAccFromRS(set));
+                }
             }
         }
         return accountList;
