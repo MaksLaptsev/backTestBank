@@ -1,5 +1,7 @@
 package com.maksru2009.service.impl;
 
+import static org.assertj.core.api.Assertions.*;
+
 import com.maksru2009.dao.impl.BankDaoImpl;
 import com.maksru2009.entity.Bank;
 import com.maksru2009.entity.User;
@@ -13,8 +15,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import java.sql.SQLException;
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

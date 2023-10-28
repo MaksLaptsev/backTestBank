@@ -1,5 +1,7 @@
 package com.maksru2009.service.impl;
 
+import static org.assertj.core.api.Assertions.*;
+
 import com.maksru2009.dao.impl.TransactionDaoImpl;
 import com.maksru2009.entity.Account;
 import com.maksru2009.entity.Bank;
@@ -7,12 +9,8 @@ import com.maksru2009.entity.Transaction;
 import com.maksru2009.entity.User;
 import com.maksru2009.type.TransactionType;
 import com.maksru2009.utils.MakeTransaction;
-import com.maksru2009.utils.checkCreator.CreatePdf;
-import com.maksru2009.utils.checkCreator.TypeOfCheck;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -21,13 +19,12 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
-
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import static org.assertj.core.api.Assertions.*;
+
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 class TransactionServiceImplTest {

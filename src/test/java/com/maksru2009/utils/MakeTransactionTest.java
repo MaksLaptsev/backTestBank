@@ -1,5 +1,7 @@
 package com.maksru2009.utils;
 
+import static org.assertj.core.api.Assertions.*;
+
 import com.maksru2009.dao.impl.AccountDaoImpl;
 import com.maksru2009.entity.Account;
 import com.maksru2009.entity.Transaction;
@@ -12,10 +14,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.sql.SQLException;
 
-import static org.assertj.core.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class MakeTransactionTest {

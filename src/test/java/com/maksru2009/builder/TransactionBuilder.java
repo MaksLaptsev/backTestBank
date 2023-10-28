@@ -2,8 +2,12 @@ package com.maksru2009.builder;
 
 import com.maksru2009.entity.Transaction;
 import com.maksru2009.type.TransactionType;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.sql.Timestamp;
 
+@NoArgsConstructor(staticName = "sTransaction")
 public class TransactionBuilder implements TestBuilder<Transaction>{
     private int id = 1;
     private TransactionType type = TransactionType.CASH;
@@ -17,8 +21,9 @@ public class TransactionBuilder implements TestBuilder<Transaction>{
                 .type(type)
                 .amount(amount)
                 .timestamp(timestamp)
-                .beneficiaryAccount(AccountBuilder.sAccount().build())
+                .beneficiaryAccount(AccountBuilder.sAccount().withDateOpen(null).build())
                 .sendingAccount(AccountBuilder.sAccount()
+                        .withDateOpen(null)
                         .withAccountNumber("WWWWWWWWWWWWWWWW")
                         .withId(2)
                         .withAmount(777)

@@ -1,5 +1,7 @@
 package com.maksru2009.dao.impl;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.maksru2009.builder.AccountBuilder;
 import com.maksru2009.entity.Account;
 import lombok.SneakyThrows;
@@ -13,8 +15,6 @@ import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 import java.sql.*;
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

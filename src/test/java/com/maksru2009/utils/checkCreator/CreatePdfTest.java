@@ -1,25 +1,21 @@
 package com.maksru2009.utils.checkCreator;
 
+import static org.assertj.core.api.Assertions.*;
+
 import com.maksru2009.entity.Account;
 import com.maksru2009.entity.Bank;
 import com.maksru2009.entity.Transaction;
 import com.maksru2009.entity.User;
 import com.maksru2009.type.TransactionType;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
-
 import java.io.File;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.stream.Stream;
-
-import static org.assertj.core.api.Assertions.*;
 
 class CreatePdfTest {
     private CreatePdf createPdf;
