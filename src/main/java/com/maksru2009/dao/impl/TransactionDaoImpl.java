@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class TransactionDaoImpl implements TransactionDao<Transaction> {
-    private final Connection con;
+    private Connection con;
 
     public TransactionDaoImpl() {
         con = GetConnection.getConnection();

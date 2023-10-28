@@ -5,6 +5,8 @@ import com.maksru2009.dao.AccountDao;
 import com.maksru2009.entity.Account;
 import com.maksru2009.entity.Bank;
 import com.maksru2009.entity.User;
+import lombok.AllArgsConstructor;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;

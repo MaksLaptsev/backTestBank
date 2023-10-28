@@ -4,6 +4,7 @@ import com.maksru2009.DBconnection.GetConnection;
 import com.maksru2009.dao.UserDao;
 import com.maksru2009.entity.Bank;
 import com.maksru2009.entity.User;
+import lombok.AllArgsConstructor;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserDaoImpl implements UserDao<User> {
-    private final Connection con;
+    private  Connection con;
 
     public UserDaoImpl(){
         con = GetConnection.getConnection();
