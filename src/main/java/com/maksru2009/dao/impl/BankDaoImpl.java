@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class BankDaoImpl implements BankDao<Bank> {
-    private final Connection con;
+    private Connection con;
 
     public BankDaoImpl() {
         con = GetConnection.getConnection();
